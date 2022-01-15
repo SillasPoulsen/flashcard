@@ -1,18 +1,24 @@
-import React, { useState, useEffect, useRef } from "react";
-import FlashcardList from "./FlashcardList";
-import "./App.css";
+import React, { useState, useEffect } from 'react';
+import FlashcardList from './FlashcardList';
+import './App.css';
 
 function App() {
-  const [flashcards, setFlashcards] = useState(JavaScript);
-  const [categories, setCategories] = useState(["JavaScript", "HelloWorld"]);
+  const [flashcards, setFlashcards] = useState([]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    const defaultQuestions = questions.filter((question) => {
+      return question.category.includes('JavaScript');
+    })
+    setFlashcards(defaultQuestions);
+  }, []);
+
   function handleChange(event) {
-    console.log(event.target.value);
-    setFlashcards({ selectValue: event.target.value });
-  }
+    const selectedQuestions = questions.filter((question) => {
+      return question.category.includes(event.target.value);
+    });
 
-  useEffect(() => {}, [handleChange]);
+    setFlashcards(selectedQuestions);
+  }
 
   return (
     <>
@@ -20,7 +26,7 @@ function App() {
         <div className="form-group">
           <label htmlFor="category">Category</label>
           <select id="category" onChange={handleChange}>
-            {categories.map((category) => {
+            {categoriesList.map((category) => {
               return (
                 <option key={category.value} value={category.value}>
                   {category}
@@ -30,41 +36,45 @@ function App() {
           </select>
         </div>
       </form>
-      <div className="container">
-        <FlashcardList flashcards={flashcards} />
-      </div>
+      {flashcards && (
+        <div className="container">
+          <FlashcardList flashcards={flashcards} />
+        </div>
+      )}
     </>
   );
 }
 
-const JavaScript = [
+const categoriesList = ['JavaScript', 'HelloWorld', 'xxx'];
+
+const questions = [
   {
     id: 1,
-    question: "What is functional programming?",
-    answer:
-      "Functional Programming is a form of programming in which you can pass functions as parameters to other functions and also return them as values. In functional programming, we think and code in terms of functions.",
+    category: 'JavaScript',
+    question: 'What is functional programming?',
+    answer: 'Short text',
   },
   {
     id: 2,
-    question: "What are some advantages of functional programming?",
-    answer:
-      "FP is based around the concept of pure functions, which avoid shared state, mutable data and side-effects.",
+    category: 'HelloWorld',
+    question: 'Why Hello World?',
+    answer: 'Short text',
   },
 ];
 
-const HelloWorld = [
-  {
-    id: 3,
-    question: "What is Hello World?",
-    answer:
-      "Functional Programming is a form of programming in which you can pass functions as parameters to other functions and also return them as values. In functional programming, we think and code in terms of functions.",
-  },
-  {
-    id: 4,
-    question: "Hello Hello are some advantages World?",
-    answer:
-      "FP is based around the concept of pure functions, which avoid shared state, mutable data and side-effects.",
-  },
-];
+// const HelloWorld = [
+//   {
+//     id: 3,
+//     question: "What is Hello World?",
+//     answer:
+//       "z",
+//   },
+//   {
+//     id: 4,
+//     question: "Hello Hello are some advantages World?",
+//     answer:
+//       "YOAOS",
+//   },
+// ];
 
 export default App;
