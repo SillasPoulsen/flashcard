@@ -51,11 +51,23 @@ const questions = [
   {
     id: 1,
     category: 'JavaScript',
-    question: 'What is functional programming?',
+    question: 'What is functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v   functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v ',
     answer: 'Short text',
   },
   {
-    id: 2,
+  id: 2,
+  category: 'JavaScript',
+  question: 'Wha is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v   functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v ',
+  answer: 'Short text',
+},
+{
+  id: 3,
+  category: 'JavaScript',
+  question: 'What is v ',
+  answer: 'Short text',
+},
+  {
+    id: 4,
     category: 'HelloWorld',
     question: 'Why Hello World?',
     answer: 'Short text',
