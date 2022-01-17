@@ -51,8 +51,8 @@ const questions = [
   {
     id: 1,
     category: 'JavaScript',
-    question: 'What is functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v   functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v ',
-    answer: 'Short text',
+    question: 'short text',
+    answer: 'What is functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v   functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v What is functional programming? What is functional programming? What is functional programming? v ',
   },
   {
   id: 2,
